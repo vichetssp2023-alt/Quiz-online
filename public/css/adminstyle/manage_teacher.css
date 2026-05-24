@@ -1,0 +1,107 @@
+:root {
+  --sidebar-bg: #1e293b;
+  --primary-color: #6366f1;
+  --bg-body: #f8fafc;
+}
+body {
+  background-color: var(--bg-body);
+  font-family: "Inter", "Kantumruy Pro", sans-serif;
+}
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  position: fixed;
+  background: var(--sidebar-bg);
+  color: #fff;
+  transition: all 0.3s;
+  z-index: 1000;
+}
+.sidebar .nav-link {
+  color: #cbd5e1;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin: 4px 15px;
+  transition: 0.3s;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  background: rgba(99, 102, 241, 0.15);
+  color: #fff;
+}
+.sidebar .nav-link i {
+  width: 25px;
+}
+.stat-card {
+  border-radius: 20px !important;
+  transition: all 0.3s ease;
+}
+.stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+.main-content {
+  margin-left: 260px;
+  padding: 30px;
+}
+.teacher-avatar {
+  width: 45px;
+  height: 45px;
+  background: #6366f1;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.teacher-avatar img {
+  object-fit: cover; /* ជួយឱ្យរូបភាពពេញរង្វង់ និងមិនយឺត */
+}
+
+/* បន្ថែម Hover effect បន្តិចដើម្បីឱ្យមើលទៅ Professional */
+.teacher-avatar:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease;
+}
+.card {
+  border: none;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+.btn-create {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-create:hover {
+  transform: translateY(-5px);
+}
+.btn-create button {
+  border: none;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1) !important;
+}
+.modal {
+  -webkit-backdrop-filter: blur(1px); /* សម្រាប់ Safari និង Chrome ចាស់ៗ */
+  backdrop-filter: blur(1px);
+  backface-visibility: hidden;
+}
+.modal.fade .modal-dialog {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(0.95) translateY(20px);
+}
+.modal.show .modal-dialog {
+  transform: scale(1) translateY(0);
+}
+@media (max-width: 992px) {
+  .sidebar {
+    margin-left: -260px;
+  }
+  .main-content {
+    margin-left: 0;
+  }
+}

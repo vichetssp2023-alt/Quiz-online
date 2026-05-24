@@ -1,0 +1,263 @@
+:root {
+  --sidebar-bg: #1e293b;
+  --primary-color: #6366f1;
+  --bg-body: #f8fafc;
+  --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+body {
+  background-color: var(--bg-body);
+  font-family: "Inter", "Kantumruy Pro", sans-serif;
+  overflow-x: hidden;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  position: fixed;
+  background: var(--sidebar-bg);
+  color: #fff;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar .nav-link {
+  color: #cbd5e1;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin: 4px 15px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  background: rgba(99, 102, 241, 0.15);
+  color: #fff;
+}
+
+.sidebar .nav-link i {
+  width: 25px;
+}
+
+/* --- Main Content Area --- */
+.main-content {
+  margin-left: 260px;
+  padding: 30px;
+  min-height: 100vh;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* --- Cards & Stats (The Smooth Version) --- */
+.sidebar .nav-link i {
+  width: 25px;
+}
+.stat-card {
+  border-radius: 20px !important;
+  transition: all 0.3s ease;
+}
+.stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+.card {
+  border: none;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* --- Accordion Styling --- */
+.accordion-item {
+  border: none !important;
+  margin-bottom: 20px !important;
+  border-radius: 15px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.accordion-button {
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: rgba(99, 102, 241, 0.05);
+  color: var(--primary-color);
+  box-shadow: none;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* --- Table Refinement --- */
+.table-responsive {
+  border-radius: 0 0 15px 15px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  font-family: "Kantumruy Pro", sans-serif;
+  vertical-align: middle;
+}
+
+.table-light th {
+  background-color: #f1f5f9 !important;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  padding: 15px 20px;
+  border: none;
+}
+
+.table tbody td {
+  padding: 16px 20px;
+  background-color: #fff;
+  border-top: 1px solid #f8fafc;
+}
+
+.table-hover tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.table-hover tbody tr:hover td {
+  background-color: #f8fafc;
+}
+
+/* --- Status & Images --- */
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.bg-pass {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+.bg-fail {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.student-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Buttons --- */
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-10px);
+  filter: brightness(110%);
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .sidebar {
+    transform: translateX(-10px);
+  }
+  .main-content {
+    margin-left: 0 !important;
+    padding: 15px;
+  }
+}
+
+canvas {
+  max-width: 100% !important;
+  height: auto !important;
+}
+/* --- Print Optimization --- */
+/* --- ការកំណត់សម្រាប់បោះពុម្ព (Final Fix) --- */
+@media print {
+  /* ១. លុប Sidebar, Buttons និង Navbar ចេញឱ្យអស់ */
+  .sidebar,
+  .no-print,
+  .btn,
+  #exportExcel,
+  .navbar,
+  header {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    position: static !important;
+  }
+
+  .accordion-collapse {
+    display: block !important;
+    height: auto !important;
+    visibility: visible !important;
+  }
+
+  .accordion-button::after {
+    display: none !important;
+  }
+
+  .card,
+  .stat-card {
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+    transform: none !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* ✅ Fix charts staying in one box */
+  .row.g-4.mb-5:last-of-type {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* ✅ Keep both charts on same page */
+  .col-md-6 {
+    width: 50% !important;
+    float: left !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* ✅ Fix chart canvas size for print */
+  canvas {
+    max-width: 300px !important;
+    max-height: 250px !important;
+  }
+
+  body {
+    background-color: white !important;
+    color: black !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  @page {
+    size: A4 landscape;
+    margin: 10mm;
+  }
+}

@@ -1,0 +1,108 @@
+body {
+  background-color: #f1f5f9;
+  font-family: "Kantumruy Pro", sans-serif;
+}
+.quiz-container {
+  max-width: 800px;
+  margin: 50px auto;
+}
+.question-card {
+  display: none;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+.question-card.active {
+  display: block;
+  animation: fadeIn 0.4s;
+}
+
+/* រចនាប័ទ្មសម្រាប់ជម្រើសចម្លើយ A, B, C, D */
+.option-item {
+  border: 2px solid #e2e8f0;
+  border-radius: 15px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+}
+.option-item:hover {
+  border-color: #4f46e5;
+  background: #f8faff;
+}
+.option-item input {
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.timer-box {
+  color: #ef4444;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.container {
+  max-width: 800px;
+}
+.result-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* រចនាប័ទ្មសម្រាប់ Review Section */
+.review-section {
+  margin-top: 30px;
+}
+.review-item {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-left: 6px solid #cbd5e1;
+  transition: 0.3s;
+}
+.review-item.correct {
+  border-left-color: #22c55e;
+  background: #f0fdf4;
+}
+.review-item.wrong {
+  border-left-color: #ef4444;
+  background: #fef2f2;
+}
+
+.status-icon {
+  font-size: 1.2rem;
+  margin-left: 10px;
+}
+.correct-text {
+  color: #16a34a;
+  font-weight: bold;
+}
+.wrong-text {
+  color: #dc2626;
+  font-weight: bold;
+}
+@media (max-width: 992px) {
+  .sidebar {
+    margin-left: -260px;
+  }
+  .main-content {
+    margin-left: 0;
+  }
+}

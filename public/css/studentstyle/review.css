@@ -1,0 +1,147 @@
+:root {
+  --sidebar-bg: #1e293b;
+  --primary-color: #6366f1;
+  --bg-body: #f8fafc;
+}
+body {
+  background-color: var(--bg-body);
+  font-family: "Inter", "Kantumruy Pro", sans-serif;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  position: fixed;
+  background: var(--sidebar-bg);
+  color: #fff;
+  transition: all 0.3s;
+  z-index: 1000;
+}
+.sidebar .nav-link {
+  color: #cbd5e1;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin: 4px 15px;
+  transition: 0.3s;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  background: rgba(99, 102, 241, 0.15);
+  color: #fff;
+}
+.sidebar .nav-link i {
+  width: 25px;
+}
+.main-content {
+  margin-left: 260px;
+  padding: 40px;
+}
+
+/* UI Enhancements */
+.review-header {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  border-left: 6px solid var(--primary-color);
+}
+
+.question-card {
+  background: white;
+  border: none;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 25px;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.question-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.option-box {
+  padding: 12px 20px;
+  border-radius: 12px;
+  margin-top: 10px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+}
+
+.option-box.correct {
+  background-color: #f0fdf4;
+  border-color: #22c55e;
+  color: #15803d;
+  font-weight: 600;
+}
+
+.option-label {
+  width: 30px;
+  height: 30px;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 15px;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.correct .option-label {
+  background: #22c55e;
+  color: white;
+}
+
+.badge-number {
+  background: var(--primary-color);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.btn-back {
+  background: white;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+.btn-back:hover {
+  background: #f8fafc;
+  color: var(--primary-color);
+}
+/* ចម្លើយដែលត្រឹមត្រូវ (បង្ហាញពណ៌បៃតងព្រាលៗ) */
+.option-box.is-correct {
+  border: 2px solid #28a745 !important;
+  background-color: #f0fff4 !important;
+}
+
+/* ករណីសិស្សរើសខុស (បង្ហាញពណ៌ក្រហមលើប្រអប់ដែលគេរើស) */
+.option-box.selected-wrong {
+  border: 2px solid #dc3545 !important;
+  background-color: #fff5f5 !important;
+}
+
+/* បន្ថែមស្ទីលឱ្យ Label (A, B, C, D) */
+.selected-wrong .option-label {
+  background-color: #dc3545 !important;
+  color: white !important;
+}
+
+.is-correct .option-label {
+  background-color: #28a745 !important;
+  color: white !important;
+}

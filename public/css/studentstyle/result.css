@@ -1,0 +1,169 @@
+:root {
+  --sidebar-bg: #1e293b;
+  --primary-color: #6366f1;
+  --bg-body: #f8fafc;
+}
+body {
+  background-color: var(--bg-body);
+  font-family: "Inter", "Kantumruy Pro", sans-serif;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  position: fixed;
+  background: var(--sidebar-bg);
+  color: #fff;
+  transition: all 0.3s;
+  z-index: 1000;
+}
+.sidebar .nav-link {
+  color: #cbd5e1;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin: 4px 15px;
+  transition: 0.3s;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  background: rgba(99, 102, 241, 0.15);
+  color: #fff;
+}
+.sidebar .nav-link i {
+  width: 25px;
+}
+
+.main-content {
+  margin-left: 260px;
+  padding: 40px;
+  transition: 0.3s;
+}
+
+/* Stats Card Style */
+.stat-card {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+.icon-box {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Glass Card for Table */
+.glass-card {
+  background: white;
+  border-radius: 24px;
+  border: 1px solid #dadfe5;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.glass-card:hover {
+  transform: translateY(-8px);
+  /* border-color: var(--primary); */
+  box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.1);
+}
+
+/* Table Styling */
+.table thead th {
+  background: #f8fafc;
+  color: #1e293b;
+  font-weight: 800; /* Bold header */
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 20px;
+  border-bottom: 1px solid #f1f5f9;
+}
+.table tbody td {
+  padding: 20px;
+  vertical-align: middle;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Status & Score Badges */
+.score-badge {
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 800;
+}
+.score-badge.pass {
+  background: #dcfce7;
+  color: #15803d;
+}
+.score-badge.fail {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.status-pill {
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.pill-pass {
+  background: #22c55e;
+  color: white;
+}
+.pill-fail {
+  background: #ef4444;
+  color: white;
+}
+
+/* Small Review Button */
+.btn-review-mini {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: #ffffff;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px; /* មូលតិចៗបែបទំនើប */
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-review-mini i {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover Effect */
+.btn-review-mini:hover {
+  background: #6366f1; /* ពណ៌ Primary */
+  color: white;
+  border-color: #6366f1;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+}
+
+.btn-review-mini:hover i {
+  transform: translateX(4px); /* Icon រំកិលទៅមុខបន្តិចពេល Hover */
+}
+
+@media (max-width: 992px) {
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+}
